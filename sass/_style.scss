@@ -1,0 +1,189 @@
+$fontsPath:   "../fonts" !default;
+
+$green-theme: #478A42;
+$orange-theme: #C74223;
+$pink-theme: #D84854;
+$yellow-theme: #DE9948;
+$blue-theme: #263357;
+
+$background-color: $green-theme;
+$box-shadow-color: #aaa;
+$plan-padding: 15px;
+$preferred-extra-height: 25px;
+
+@import "compass/css3";
+@import "bootstrap/_mixins";
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+
+// @font-face {
+// 	font-family: 'Noto Sans';
+// 	src:
+// 		url('#{$fontsPath}/NotoSans-Regular.ttf') format("truetype") 
+// 		url('#{$fontsPath}/NotoSans-Bold.ttf') format("truetype"),
+// 		url('#{$fontsPath}/NotoSans-Italic.ttf') format("truetype"),
+// 		url('#{$fontsPath}/NotoSans-BoldItalic.ttf') format("truetype");
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+
+@each $theme in green-theme orange-theme yellow-theme blue-theme pink-theme{
+
+	@if( $theme == "green-theme"){
+		$background-color: $green-theme;
+	}
+	@else if( $theme == "orange-theme"){
+		$background-color: $orange-theme;
+	}
+	@else if( $theme == "yellow-theme"){
+		$background-color: $yellow-theme;
+	}
+	@else if( $theme == "blue-theme"){
+		$background-color: $blue-theme;
+	}
+	@else{
+		$background-color: $pink-theme;
+	}
+
+	.#{$theme}{
+		background: $background-color;
+	}
+
+	/* STYLE FOR #{$theme} theme*/
+	body.#{$theme}{
+		color: white;
+		font-family: 'Noto Sans', sans-serif;
+		@include background-image(radial-gradient( $background-color, lighten($background-color, 5%) ));
+
+
+		a{
+			color: darken($background-color, 20%);
+		}
+
+		a:hover{
+			color: lighten($background-color, 40%);
+			text-decoration: none;
+		}
+
+		.sub-title{
+			color: lighten($background-color, 40%);
+		}
+
+		.plans .btn.btn-success{
+			@include buttonBackground($background-color, darken($background-color, 15%) );
+
+			color: white;
+			background: $background-color;
+			@include border-radius(3px);
+			@include background-image(linear-gradient( lighten($background-color, 2%), $background-color ));
+		}
+
+		/* STYLE FINISHED FOR #{$theme} theme*/
+		/*************************************************************/
+	}
+}
+
+
+.learn-more{
+	font-weight: 100;
+}
+
+
+.heading{
+	margin-top: 50px;
+	font-family: 'Noto Sans', sans-serif;
+	@include single-text-shadow();
+}
+
+.plans{
+	margin-left: 130px;
+	color: #444;
+	margin-bottom: 50px;
+
+	> div{
+		padding: $plan-padding;
+		background: white;
+		@include border-radius(4px);
+		margin: $preferred-extra-height 0;
+	}
+
+	> div.preferred-plan{
+		z-index: 100;
+		position: relative;
+		margin: 0;
+		@include box-shadow($box-shadow-color 2px 1px 5px, $box-shadow-color -2px 1px 5px);
+
+		.plan-features{
+			margin-top: $preferred-extra-height + 20px;
+			margin-bottom: $preferred-extra-height + 20px;
+		}
+	}
+
+	.plan-name{
+		font-family: 'Noto Sans', sans-serif;
+		text-transform: uppercase;
+		font-weight: normal;
+		font-variant: italic;
+	}
+
+	.plan-price{
+		font-family: 'Noto Sans', sans-serif;
+		font-weight: normal;
+	}
+
+	> span{
+		font-size: 12px;
+		font-weight: normal;
+		display: block;
+		margin-top: -10px;
+	}
+
+	.plan-features{
+		margin-top: 20px;
+		margin-bottom: 20px;
+
+		li{
+			margin-bottom: 8px;
+		}
+	}
+}
+
+
+@media (min-width: 780px) and (max-width: 1199px) {
+	.plans{
+		margin-left: 90px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.plans{
+		margin-left: 60px;
+	}
+}
+
+@media (max-width: 767px) {
+	.plans{
+		margin-left: 0;
+
+		> div{
+			float: none;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
+/* REMOVE IN PRODUCTION */
+#themeroller{
+	position: fixed;
+	top: 40%;
+	background-color: black;
+}
+
+#themeroller li{
+	width: 30px;
+	height: 30px;
+	border: 1px solid #fff;
+	cursor: pointer
+}
+/* REMOVE IN PRODUCTION */

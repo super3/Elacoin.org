@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+
+	<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+	<!--[if IE]>
+		<link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<![endif]-->
+</head>
+<body class="green-theme">
+	<div class="container text-center">
+
+		<h2 class="heading">Start your 30 days free trial today</h2>
+		<p class="lead sub-title">No credit card required. No long term contracts. Pay as you go.</p>
+		
+		<div class="row plans text-center">
+			<div class="span3">
+				<h5 class="plan-name">Personal</h5>
+				<h1 class="plan-price">$9</h1>
+				<span class="muted">per month</span>
+
+				<ul class="unstyled plan-features">
+					<li>5 GB Disk Space</li>
+					<li>3 Subdomains</li>
+					<li>10 MySQL Databases</li>
+					<li>Unlimited Bandwidth</li>
+					<li>Email Support</li>
+				</ul>
+
+				<a href="#" class="btn btn-block btn-large btn-success">Choose Plan</a>
+			</div>
+			<div class="span3 preferred-plan">
+				<h5 class="plan-name">Premium</h5>
+
+				<h1 class="plan-price">$49</h1>
+				<span class="muted">per month</span>
+
+				<ul class="unstyled plan-features">
+					<li>50 GB Disk Space</li>
+					<li>50 Subdomains</li>
+					<li>100 MySQL Databases</li>
+					<li>Unlimited Bandwidth</li>
+					<li>Chat Support</li>
+				</ul>
+
+				<a href="#" class="btn btn-block btn-large btn-success">Choose Plan</a>
+			</div>
+			<div class="span3">
+				<h5 class="plan-name">Enterprise</h5>
+				
+				<h1 class="plan-price">$99</h1>
+				<span class="muted">per month</span>
+
+				<ul class="unstyled plan-features">
+					<li>250 GB Disk Space</li>
+					<li>1000 Subdomains</li>
+					<li>1000 MySQL Databases</li>
+					<li>Unlimited Bandwidth</li>
+					<li>Phone Support</li>
+				</ul>
+
+				<a href="#" class="btn btn-block btn-large btn-success">Choose Plan</a>
+			</div>
+		</div>
+
+		<h4 class="learn-more">
+			<strong>Need More?</strong>
+			<span>We offer larger plans for companies with even more contacts.</span>
+			<a href="#">Learn More &rarr;</a>
+		</h4>
+
+	</div>
+
+
+
+
+
+
+
+
+	<!-- REMOVE THIS IN PRODUCTION -->
+	<ul class="unstyled" id="themeroller">
+		<li class="green-theme"></li>
+		<li class="orange-theme"></li>
+		<li class="pink-theme"></li>
+		<li class="yellow-theme"></li>
+		<li class="blue-theme"></li>
+	</ul>
+
+	<script type="text/javascript" src="jquery.js"></script>
+
+	<script type="text/javascript">
+		jQuery(function(){
+			jQuery("#themeroller").on("click", "li", function(){
+				var selectedTheme = jQuery(this).attr("class");
+
+				jQuery("body")
+					.removeClass("green-theme")
+					.removeClass("orange-theme")
+					.removeClass("yellow-theme")
+					.removeClass("pink-theme")
+					.removeClass("blue-theme")
+					.addClass(selectedTheme);
+
+			});
+		});
+	</script>
+	<!-- REMOVE THIS IN PRODUCTION -->
+</body>
+</html>
